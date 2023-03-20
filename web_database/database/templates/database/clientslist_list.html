@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome List Database</title>
+</head>
+<body>
+    <table>
+        <tbody>
+          <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Password</th>
+            <th>Email</th>
+            <th>Register Date</th>
+          </tr>
+          {% block content %}
+          {% for clientslist in object_list%}
+          <tr>
+            <td>{{ clientslist.name }}</td>
+            <td>{{ clientslist.full_name }}</td> 
+            <td>{{ clientslist.email }}</td>
+            <td>{{ clientslist.password }}</td>
+            <td>{{ clientslist.reg_date }}</td> 
+          </tr>
+            {%endfor%}
+            {% endblock %}
+        </tbody>
+      </table>
+</body>
+</html>
